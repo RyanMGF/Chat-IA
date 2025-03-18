@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot de Chat</title>
-    <!--Icones do Google fontes-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container"></div>
-    <header class="app-header">
-    <h1 class="heading">Olá!</h1>
-    <h2 class="sub-heading">Como posso ajudar?</h2>
-</header>
-
-<!--Lista de Sugestões-->
-<ul class="suggestions">
-    <li class="suggestions-item">
-        <p class="test">Faça-me um desing de um escritório Home Office
-            abaixo de R$1.000 reais
-        </p>
-        <span class="material-symbols-rounded"> draw </span>
-    </li> 
-    <li class="suggestions-item">
-        <p class="test">Como consigo aprimorar minhas técnicas com desing?
-        </p>
-        <span class="material-symbols-rounded">lightbulb</span>
-    </li>
-    <li class="suggestions-item">
-        <p class="test">Me recomende ferramentas para melhorar meus estudos!
-        </p>
-        <span class="material-symbols-rounded">explore</span>
-    </li>
-    <li class="suggestions-item">
-        <p class="test">Faça-me um aplicativo que controle minhas finanças!
-        </p>
-        <span class="material-symbols-rounded">code_blocks</span>
-    </li>
-</ul>
-
-<div class="prompt-container">
-    <div class="prompt-wrapper">
-        <form action="#" class="prompt-form">
-           <input type="text" placeholder="Pergunte ao Biru" class="prompt-input"
-           required> 
-        <div class="prompt-actions">
-            <button id="add-file-btn" type="button"
-            class = "material-symbols-rounded">attach_file</button>
-            <button id ="send-prompt-btn"
-            class = "material-symbols-rounded">arrow_upward</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biru Chatbot</title>
+    <!-- Linking Google Fonts For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- App Header -->
+      <header class="app-header">
+        <h1 class="heading">Ola! Como vai? Eu sou o Biru!</h1>
+        <h4 class="sub-heading">Como posso te ajudar hoje?</h4>
+      </header>
+      <!-- Suggestions List -->
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">Faça um escritório para mim usando no máximo R$1000.</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Como posso melhorar minhas habilidades profissionais?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Me diga ferramentas IA para desing.</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Crie para mim um site pessoal.</p>
+          <span class="icon material-symbols-rounded">code_blocks</span>
+        </li>
+      </ul>
+      <!-- Chats -->
+      <div class="chats-container"></div>
+      <!-- Prompt Input -->
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder="Ask Gemini" class="prompt-input" required />
+            <div class="prompt-actions">
+              <!-- File Upload Wrapper -->
+              <div class="file-upload-wrapper">
+                <img src="" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+              <!-- Send Prompt and Stop Response Buttons -->
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+          <!-- Theme and Delete Chats Buttons -->
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
         </div>
-        </form>
-
-        <button id ="theme-toggle-btn"
-        class = "material-symbols-rounded">light_mode</button>
-        <button id ="delete-chats-btn"
-        class = "material-symbols-rounded">delete</button>
+        <p class="disclaimer-text">Biru pode cometer erros, então sempre confira as respostas duas vezes.</p>
+      </div>
     </div>
-
-    <p class="disclaimer-text">Biru pode fazer erros, então cheque duas
-        vezes a informação.
-    </p>
-</div>
-
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
